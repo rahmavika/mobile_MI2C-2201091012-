@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
-import 'package:web_framework/screen_page/page_bottom_navigation.dart';
+import 'package:web_framework/tugas_page/page_bottom_navigation.dart';
+import 'package:web_framework/screen_page/page_list_berita.dart';
+import 'package:web_framework/screen_page/page_list_users.dart';
+import 'package:web_framework/screen_page/page_login_api.dart';
 import 'package:web_framework/screen_page/page_navigation.dart';
+import 'package:web_framework/screen_page/page_register_api.dart';
+import 'package:web_framework/screen_page/page_search_list.dart';
 
 class PageBeranda extends StatelessWidget {
   const PageBeranda({super.key});
@@ -27,13 +32,13 @@ class PageBeranda extends StatelessWidget {
                 width: 200,
               ),
               SizedBox(height: 8),
-              const Image(
-                image: NetworkImage(
-                    'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
-                fit: BoxFit.contain,
-                height: 200,
-                width: 200,
-              ),
+              // const Image(
+              //   image: NetworkImage(
+              //       'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+              //   fit: BoxFit.contain,
+              //   height: 200,
+              //   width: 200,
+              // ),
               Text('Program Studi: Manajemen Informatika 2C'),
               Text('Kampus Politeknik Negeri Padang'),
               SizedBox(height: 10,),
@@ -121,6 +126,86 @@ class PageBeranda extends StatelessWidget {
                 );
               },
                 child: Text('Button Navigation Bar',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12
+                  ),
+                ),
+                color: Colors.blueGrey,
+                textColor: Colors.white,
+              ),
+              SizedBox(height: 10,),
+              MaterialButton(onPressed: (){
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("List User"),
+                    backgroundColor: Colors.grey,
+                  ),
+                );
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+                => PageListUsers())
+                );
+              },
+                child: Text('List User',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12
+                  ),
+                ),
+                color: Colors.blueGrey,
+                textColor: Colors.white,
+              ),
+              SizedBox(height: 10,),
+              MaterialButton(onPressed: (){
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("List Berita"),
+                    backgroundColor: Colors.grey,
+                  ),
+                );
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+                => PageListBerita())
+                );
+              },
+                child: Text('List Berita',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12
+                  ),
+                ),
+                color: Colors.blueGrey,
+                textColor: Colors.white,
+              ),
+              SizedBox(height: 10,),
+              MaterialButton(onPressed: (){
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Register"),
+                    backgroundColor: Colors.grey,
+                  ),
+                );
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+                => PageRegisterApi())
+                );
+              },
+                child: Text('Register',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12
+                  ),
+                ),
+                color: Colors.blueGrey,
+                textColor: Colors.white,
+              ),
+              SizedBox(height: 10,),
+              MaterialButton(onPressed: (){
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Login"),
+                    backgroundColor: Colors.grey,
+                  ),
+                );
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+                => PageLoginApi())
+                );
+              },
+                child: Text('Login',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 12
